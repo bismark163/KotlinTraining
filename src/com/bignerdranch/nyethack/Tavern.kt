@@ -1,4 +1,5 @@
-import kotlin.math.roundToInt
+package com.bignerdranch.nyethack
+
 import java.io.File
 
 const val TAVERN_NAME = "Taernyl's Folly"
@@ -30,7 +31,7 @@ fun main(args: Array<String>) {
         println("The tavern master says: Nay, they departed hours ago.")
     }
 
-//    placeOrder("shandy,Dragon's Breath,5.91")
+//    com.bignerdranch.nyethack.placeOrder("shandy,Dragon's Breath,5.91")
 
 
     (0..9).forEach {
@@ -46,8 +47,10 @@ fun main(args: Array<String>) {
 
     var orderCount = 0
     while (orderCount <= 9) {
-        placeOrder(uniquePatrons.shuffled().first(),
-            menuList.shuffled().first())
+        placeOrder(
+            uniquePatrons.shuffled().first(),
+            menuList.shuffled().first()
+        )
         orderCount++
     }
 
@@ -73,7 +76,7 @@ private fun placeOrder(patronName: String, menuData: String) {
     println(message)
     performPurchase(price.toDouble(), patronName)
 
-    //performPurchase(price.toDoubleOrNull() ?: 0.0)
+    //com.bignerdranch.nyethack.performPurchase(price.toDoubleOrNull() ?: 0.0)
 
     val phrase = if (name == "Dragon's Breath") {
         "$patronName exclaims ${toDragonSpeak("DRAGON'S BREATH: IT'S GOT WHAT ADVENTURERS CRAVE! $name!")}"
