@@ -13,7 +13,8 @@ class Player (_name: String,
             field = value.trim()
         }
 
-    val hometown = selectHometown()
+    val hometown by lazy {selectHometown()}
+    var currentPosition = Coordinate(0, 0)
 
     constructor(name: String) : this(name,
         isBlessed = true,
